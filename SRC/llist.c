@@ -1,6 +1,5 @@
 #include <pthread.h>
 #include <stdlib.h>
-#include <stdio.h> // TODO: Remove after fprintf() removed
 
 #include "llist.h"
 
@@ -109,7 +108,6 @@ bool llist_dequeue(llist_t *llist, void **data)
 {
 	bool ret = false;
 	if (!data) {
-		printf("Always false\n");
 		return ret;
 	}
 

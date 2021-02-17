@@ -31,22 +31,22 @@ void test_func(bool (*in)(llist_t *, void *), bool (*out)(llist_t *, void **))
         if (action % 2) {
             int *num = malloc(sizeof(*num));
             *num = rand() % 26 + 65;
-            printf("+++ %c\n", *num);
+            printf("  +++ %c\n", *num);
             in(list, num);
         } else {
             void *data = NULL;
             if (out(list, &data)) {
-                printf("--- %c\n", *((char*)data));
+                printf("  --- %c\n", *((char*)data));
                 free(data);
             } 
         }
     }
 
     if (!llist_is_empty(list)) {
-        printf("--- Purging Remainder\n");
+        printf("  Purging Remainder\n");
         void *data = NULL;
         while (out(list, &data)) {
-            printf("--- %c\n", *((char*)data));
+            printf("  --- %c\n", *((char*)data));
             free(data);
         }
     }
