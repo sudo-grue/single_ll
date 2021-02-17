@@ -64,7 +64,7 @@ static void llist_delete_nodes(llist_t *llist)
 		temp = node;
 		node = node->next;
 
-        // TODO: Refactor to reduce number of evals
+	        // TODO: Refactor to reduce number of evals
 		if (llist->del) {
 			llist->del(temp->data);
 		}
@@ -173,4 +173,4 @@ bool llist_is_empty(llist_t *llist)
 		return false;
 	}
 	return true;
-}
+} /* llist_is_empty() */
