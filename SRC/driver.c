@@ -4,7 +4,7 @@
 
 #include "llist.h"
 
-#define TESTS 10
+#define TESTS 20
 
 void test_func(bool (*in)(llist_t *, void *), bool (*out)(llist_t *, void **));
 
