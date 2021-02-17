@@ -41,11 +41,14 @@ void test_func(bool (*in)(llist_t *, void *), bool (*out)(llist_t *, void **))
             } 
         }
     }
-    printf("Purging remainder\n");
-    void *data = NULL;
-    while (out(list, &data)) {
-        printf("--- %c\n", *((char*)data));
-        free(data);
+
+    if (!llist_is_empty(list)) {
+        printf("--- Purging Remainder\n");
+        void *data = NULL;
+        while (out(list, &data)) {
+            printf("--- %c\n", *((char*)data));
+            free(data);
+        }
     }
     llist_delete(&list);
 }

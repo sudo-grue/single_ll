@@ -168,3 +168,11 @@ bool llist_pop(llist_t *llist, void **data)
 {
 	return llist_dequeue(llist, data);
 } /* llist_pop() */
+
+bool llist_is_empty(llist_t *llist)
+{
+	if (!llist || llist->head) {
+		return false;
+	}
+	return true;
+}
